@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact · [Your 123]</title>
+  <title>Contact · [Muhammad Sheraz]</title>
 
-  <!-- Inter font + Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-pf8+W3pqYiqcyuRdkEhoTQZevpQRS9+7Wv2NwWF6TPF3vjN+DW6R5F0Y2+w+D9XtAL+3nDpP+g4lCGjZ7lEFkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css"/>
+  <!-- Inter font & Font Awesome icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pf8+W3pqYiqcyuRdkEhoTQZevpQRS9+7Wv2NwWF6TPF3vjN+DW6R5F0Y2+w+D9XtAL+3nDpP+g4lCGjZ7lEFkw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="bg"></div>
 
+  <!-- NAV -->
   <nav class="nav glass container">
     <span class="logo">[Your Name]</span>
     <ul class="nav__links">
@@ -25,53 +34,80 @@
     </ul>
   </nav>
 
+  <!-- CONTACT GRID -->
   <section class="contact-wrap container">
+    <!-- PROFILE CARD -->
     <div class="profile-card glass">
-      <img src="assets/profile.jpg" alt="[Your Name]" class="profile-img"/>
+      <img src="assets/profile.jpg" alt="[Your Name]" class="profile-img" />
+
       <div class="social-links">
-        <a href="https://linkedin.com/in/yourhandle" target="_blank" aria-label="LinkedIn">
+        <!-- ► Replace with your LinkedIn URL below: -->
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/yourname" target="_blank" aria-label="GitHub">
+        <!-- ► Replace with your GitHub URL below: -->
+        <a href="https://github.com/YOUR_GITHUB" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
-        </a>
-        <a href="assets/YourName_Resume.pdf" target="_blank" aria-label="Resume">
-          <i class="fas fa-file-lines"></i>
         </a>
       </div>
     </div>
 
+    <!-- CHAT FORM -->
     <div class="contact-form glass">
       <h2>Let’s Chat</h2>
-      <p>Feel free to drop me a line. I’ll get back to you asap.</p>
+      <p>Always open for freelance, consulting, or a quick tech-chat ☕.</p>
 
-      <form action="https://formspree.io/f/FORM_ID" method="POST">
+      <form id="contact-form">
         <label>
           Your Email
-          <input type="email" name="reply_to" placeholder="you@example.com" required/>
+          <input type="email" id="email" placeholder="you@example.com" required />
         </label>
+
         <label>
           Organization
-          <input type="text" name="organization" placeholder="Company / School"/>
+          <input type="text" id="org" placeholder="Company / School" />
         </label>
+
         <label>
           Message
-          <textarea name="message" rows="5" placeholder="Hi there, ..." required></textarea>
+          <textarea id="msg" rows="5" placeholder="Hi there, ..." required></textarea>
         </label>
+
         <button type="submit" class="btn">Send Message</button>
       </form>
 
       <p class="direct">
-        Or email me directly at  
+        Or email me directly at
         <a href="mailto:youremail@gmail.com">youremail@gmail.com</a>
       </p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer container">
     © <span id="year"></span> [Your Name]
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // —— MAILTO LINK LOGIC ——
+    // Change this to your real receiving address:
+    const recipientEmail = 'youremail@gmail.com';
+
+    document
+      .getElementById('contact-form')
+      .addEventListener('submit', function (e) {
+        e.preventDefault();
+        const sender = document.getElementById('email').value;
+        const org = document.getElementById('org').value;
+        const msg = document.getElementById('msg').value;
+        const subject = 'New Message from Portfolio';
+        const body = `From: ${sender}\nOrganization: ${org}\n\n${msg}`;
+        window.location.href =
+          `mailto:${recipientEmail}` +
+          `?subject=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(body)}`;
+      });
+  </script>
 </body>
 </html>
