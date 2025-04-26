@@ -1,55 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
-    <h1>Hi, I’m [Your Name]</h1>
-    <p>Electrical Engineering graduate turned AI Engineer. Welcome to my portfolio!</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Your Name] – AI Engineer Portfolio</title>
 
-  <main>
-    <h2>Projects</h2>
-    <div class="grid">
-      <!-- Repeat this block for each project -->
-      <div class="project-card" data-project="1">
-        <h3>Project One</h3>
-        <p>Short tagline</p>
-      </div>
+    <!--  Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-      <div class="project-card" data-project="2">
-        <h3>Project Two</h3>
-        <p>Short tagline</p>
+    <!--  Styles  -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!--  ⭐ 3-D animated background canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- ================= HERO ================= -->
+    <header class="hero | container flow-content">
+      <h1 class="hero__title">Hi, I’m <span>[Your Name]</span></h1>
+      <p class="hero__tag">
+        Electrical-Engineer-turned-<strong>AI Engineer</strong> crafting
+        intelligent solutions with data, code & creativity.
+      </p>
+      <a class="btn-cta" href="#projects">Explore Projects ↓</a>
+    </header>
+
+    <!-- ================= PROJECTS ================= -->
+    <main id="projects" class="projects | container flow-content">
+      <h2 class="section-title">Featured Projects (10)</h2>
+
+      <div class="project-grid">
+        <!-- Repeat - each card data-pid MUST match modal id -->
+        <article class="card" data-pid="1">
+          <h3>Smart Grid Forecasting</h3>
+          <p class="small">LSTM • PyTorch • Energy Data</p>
+        </article>
+
+        <article class="card" data-pid="2">
+          <h3>Autonomous Drone Control</h3>
+          <p class="small">ROS2 • RL • PX4</p>
+        </article>
+
+        <article class="card" data-pid="3">
+          <h3>OCR-Driven ID Parser</h3>
+          <p class="small">PaddleOCR • RegEx</p>
+        </article>
+
+        <article class="card" data-pid="4">
+          <h3>Voice-Enabled Agent UI</h3>
+          <p class="small">Whisper • TTS • SSE</p>
+        </article>
+
+        <article class="card" data-pid="5">
+          <h3>Medical Fax Pipeline</h3>
+          <p class="small">ClinicalBERT • LLaMA</p>
+        </article>
+
+        <article class="card" data-pid="6">
+          <h3>Real-Time Pose Estimator</h3>
+          <p class="small">MediaPipe • TensorRT</p>
+        </article>
+
+        <article class="card" data-pid="7">
+          <h3>Edge-AI Camera</h3>
+          <p class="small">Jetson Nano • YOLOv8</p>
+        </article>
+
+        <article class="card" data-pid="8">
+          <h3>Forecast Dashboard</h3>
+          <p class="small">Plotly Dash • AWS</p>
+        </article>
+
+        <article class="card" data-pid="9">
+          <h3>GAN Art Generator</h3>
+          <p class="small">StyleGAN-XL</p>
+        </article>
+
+        <article class="card" data-pid="10">
+          <h3>Recruiting Chatbot</h3>
+          <p class="small">RAG • LangChain</p>
+        </article>
       </div>
-      <!-- ... -->
+    </main>
+
+    <!-- ================= MODAL SHELL ================= -->
+    <div class="modal__backdrop" hidden>
+      <!-- 10 modals – fill with your own detail/links -->
+      <section class="modal" id="modal-1">
+        <button class="modal__close" aria-label="Close modal">×</button>
+        <h3>Smart Grid Demand Forecasting</h3>
+        <p>
+          Deep-learning LSTM model predicting 24-h ahead electricity load with ±2 % MAPE.
+          Deployed on AWS Lambda with CI/CD (GitHub Actions).
+        </p>
+        <a class="btn-link" href="https://github.com/[repo-1]" target="_blank"
+          >View Code ↗</a
+        >
+      </section>
+
+      <!-- … copy / tweak for modal-2 … modal-10 -->
+      <section class="modal" id="modal-2">
+        <button class="modal__close">×</button>
+        <h3>Autonomous Drone Flight Control</h3>
+        <p>
+          Proximal Policy Optimization (PPO) agent trained in AirSim simulator, then
+          ported to PX4 for real-world quadrotor flights.
+        </p>
+        <a
+          class="btn-link"
+          href="https://github.com/[repo-2]"
+          target="_blank"
+          >View Code ↗</a
+        >
+      </section>
+
+      <!-- … modals 3-10 omitted for brevity … -->
     </div>
 
-    <!-- Hidden detail panels -->
-    <div id="project-detail-container">
-      <div class="project-detail" id="project-1">
-        <button class="close">×</button>
-        <h3>Project One</h3>
-        <p>Full description of Project One, tech stack, links, screenshots, etc.</p>
-        <a href="https://github.com/yourrepo/project-one" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project-detail" id="project-2">
-        <button class="close">×</button>
-        <h3>Project Two</h3>
-        <p>Full description of Project Two, tech stack, links, screenshots, etc.</p>
-        <a href="https://github.com/yourrepo/project-two" target="_blank">View on GitHub</a>
-      </div>
-      <!-- ... -->
-    </div>
-  </main>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer | flow-content">
+      <p>
+        © <span id="year"></span> [Your Name] ·
+        <a href="https://linkedin.com/in/[your-handle]" target="_blank"
+          >LinkedIn</a
+        >
+        ·
+        <a href="https://github.com/[your-handle]" target="_blank">GitHub</a>
+      </p>
+    </footer>
 
-  <footer>
-    <p>Connect with me: <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> | <a href="https://github.com/yourusername">GitHub</a></p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <!-- =========== SCRIPTS =========== -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
