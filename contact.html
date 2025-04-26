@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact · [Muhammad Sheraz]</title>
+  <title>Contact · Muhammad Sheraz</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-pf8+W3pqYiqcyuRdkEhoTQZevpQRS9+7Wv2NwWF6TPF3vjN+DW6R5F0Y2+w+D9XtAL+3nDpP+g4lCGjZ7lEFkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <!-- Inter font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="stylesheet" href="styles.css"/>
+  <!-- Font Awesome (for icons) -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+    integrity="sha512-pf8+W3pqYiqcyuRdkEhoTQZevpQRS9+7Wv2NwWF6TPF3vjN+DW6R5F0Y2+w+D9XtAL+3nDpP+g4lCGjZ7lEFkw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="bg"></div>
 
+  <!-- NAVIGATION -->
   <nav class="nav glass container">
-    <span class="logo">[Muhammad Sheraz]</span>
+    <span class="logo">Muhammad Sheraz</span>
     <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#projects">Projects</a></li>
@@ -26,22 +36,36 @@
     </ul>
   </nav>
 
+  <!-- CONTACT SECTION -->
   <section class="contact-wrap container">
+    <!-- PROFILE CARD -->
     <div class="profile-card glass">
-      <img src="assets/profile.jpg" alt="[Your Name]" class="profile-img"/>
+      <img
+        src="assets/profile.jpg"
+        alt="Muhammad Sheraz"
+        class="profile-img"
+      />
 
+      <!-- SOCIAL ICONS -->
       <div class="social-links">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/muhammad-sheraz-90b443289/" target="_blank" aria-label="LinkedIn">
+        <a
+          href="https://www.linkedin.com/in/muhammad-sheraz-90b443289/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
           <i class="fab fa-linkedin"></i>
         </a>
-        <!-- GitHub -->
-        <a href="https://github.com/dsshaizy" target="_blank" aria-label="GitHub">
+        <a
+          href="https://github.com/dsshaizy"
+          target="_blank"
+          aria-label="GitHub"
+        >
           <i class="fab fa-github"></i>
         </a>
       </div>
     </div>
 
+    <!-- MESSAGE FORM -->
     <div class="contact-form glass">
       <h2>Let’s Chat</h2>
       <p>Always open for freelance, consulting, or a quick tech-chat ☕.</p>
@@ -49,15 +73,27 @@
       <form id="contact-form">
         <label>
           Your Email
-          <input type="email" id="email" placeholder="you@example.com" required/>
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            required
+          />
         </label>
+
         <label>
           Organization
-          <input type="text" id="org" placeholder="Company / School"/>
+          <input type="text" id="org" placeholder="Company / School" />
         </label>
+
         <label>
           Message
-          <textarea id="msg" rows="5" placeholder="Hi there, …" required></textarea>
+          <textarea
+            id="msg"
+            rows="5"
+            placeholder="Hi there, …"
+            required
+          ></textarea>
         </label>
 
         <button type="submit" class="btn">Send Message</button>
@@ -71,26 +107,27 @@
   </section>
 
   <footer class="footer container">
-    © <span id="year"></span> [Your Name]
+    © <span id="year"></span> Muhammad Sheraz
   </footer>
 
   <script src="script.js"></script>
   <script>
-    // —— MAILTO LOGIC —— 
-    const recipientEmail = 'youremail@gmail.com'; // ← your inbox
-
-    document.getElementById('contact-form').addEventListener('submit', e => {
-      e.preventDefault();
-      const sender = document.getElementById('email').value;
-      const org = document.getElementById('org').value;
-      const msg = document.getElementById('msg').value;
-      const subject = 'Portfolio Message';
-      const body = `From: ${sender}\nOrganization: ${org}\n\n${msg}`;
-      window.location.href = 
-        `mailto:${recipientEmail}` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
-    });
+    // —— SEND VIA MAILTO —— 
+    const recipientEmail = "youremail@gmail.com";
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const sender = document.getElementById("email").value;
+        const org = document.getElementById("org").value;
+        const msg = document.getElementById("msg").value;
+        const subject = "Portfolio Message";
+        const body = `From: ${sender}\nOrganization: ${org}\n\n${msg}`;
+        window.location.href =
+          `mailto:${recipientEmail}` +
+          `?subject=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(body)}`;
+      });
   </script>
 </body>
 </html>
