@@ -1,142 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Your Name] – AI Engineer Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Your Name] · AI Engineer Portfolio</title>
 
-    <!--  Google Fonts  -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-    <!--  Styles  -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <!-- ❖  Pastel gradient background canvas -->
+  <div class="bg-gradient"></div>
 
-  <body>
-    <!--  ⭐ 3-D animated background canvas -->
-    <canvas id="bg"></canvas>
+  <!-- ☰  Navbar / Hero -->
+  <header class="hero container">
+    <nav class="nav glass">
+      <h1 class="logo">[Your Name]</h1>
+      <a href="#projects" class="btn-primary">Projects ↓</a>
+    </nav>
 
-    <!-- ================= HERO ================= -->
-    <header class="hero | container flow-content">
-      <h1 class="hero__title">Hi, I’m <span>[Your Name]</span></h1>
-      <p class="hero__tag">
-        Electrical-Engineer-turned-<strong>AI Engineer</strong> crafting
-        intelligent solutions with data, code & creativity.
+    <div class="hero__content">
+      <h2 class="headline">Electrical Engineer <span>→</span> AI&nbsp;Engineer</h2>
+      <p class="subtitle">
+        Transforming data ✧ code ✧ creativity into real-world products.
       </p>
-      <a class="btn-cta" href="#projects">Explore Projects ↓</a>
-    </header>
-
-    <!-- ================= PROJECTS ================= -->
-    <main id="projects" class="projects | container flow-content">
-      <h2 class="section-title">Featured Projects (10)</h2>
-
-      <div class="project-grid">
-        <!-- Repeat - each card data-pid MUST match modal id -->
-        <article class="card" data-pid="1">
-          <h3>Smart Grid Forecasting</h3>
-          <p class="small">LSTM • PyTorch • Energy Data</p>
-        </article>
-
-        <article class="card" data-pid="2">
-          <h3>Autonomous Drone Control</h3>
-          <p class="small">ROS2 • RL • PX4</p>
-        </article>
-
-        <article class="card" data-pid="3">
-          <h3>OCR-Driven ID Parser</h3>
-          <p class="small">PaddleOCR • RegEx</p>
-        </article>
-
-        <article class="card" data-pid="4">
-          <h3>Voice-Enabled Agent UI</h3>
-          <p class="small">Whisper • TTS • SSE</p>
-        </article>
-
-        <article class="card" data-pid="5">
-          <h3>Medical Fax Pipeline</h3>
-          <p class="small">ClinicalBERT • LLaMA</p>
-        </article>
-
-        <article class="card" data-pid="6">
-          <h3>Real-Time Pose Estimator</h3>
-          <p class="small">MediaPipe • TensorRT</p>
-        </article>
-
-        <article class="card" data-pid="7">
-          <h3>Edge-AI Camera</h3>
-          <p class="small">Jetson Nano • YOLOv8</p>
-        </article>
-
-        <article class="card" data-pid="8">
-          <h3>Forecast Dashboard</h3>
-          <p class="small">Plotly Dash • AWS</p>
-        </article>
-
-        <article class="card" data-pid="9">
-          <h3>GAN Art Generator</h3>
-          <p class="small">StyleGAN-XL</p>
-        </article>
-
-        <article class="card" data-pid="10">
-          <h3>Recruiting Chatbot</h3>
-          <p class="small">RAG • LangChain</p>
-        </article>
-      </div>
-    </main>
-
-    <!-- ================= MODAL SHELL ================= -->
-    <div class="modal__backdrop" hidden>
-      <!-- 10 modals – fill with your own detail/links -->
-      <section class="modal" id="modal-1">
-        <button class="modal__close" aria-label="Close modal">×</button>
-        <h3>Smart Grid Demand Forecasting</h3>
-        <p>
-          Deep-learning LSTM model predicting 24-h ahead electricity load with ±2 % MAPE.
-          Deployed on AWS Lambda with CI/CD (GitHub Actions).
-        </p>
-        <a class="btn-link" href="https://github.com/[repo-1]" target="_blank"
-          >View Code ↗</a
-        >
-      </section>
-
-      <!-- … copy / tweak for modal-2 … modal-10 -->
-      <section class="modal" id="modal-2">
-        <button class="modal__close">×</button>
-        <h3>Autonomous Drone Flight Control</h3>
-        <p>
-          Proximal Policy Optimization (PPO) agent trained in AirSim simulator, then
-          ported to PX4 for real-world quadrotor flights.
-        </p>
-        <a
-          class="btn-link"
-          href="https://github.com/[repo-2]"
-          target="_blank"
-          >View Code ↗</a
-        >
-      </section>
-
-      <!-- … modals 3-10 omitted for brevity … -->
+      <a href="#projects" class="btn-primary">Explore my work</a>
     </div>
+  </header>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer | flow-content">
+  <!-- ✦  Projects  -->
+  <main id="projects" class="projects container">
+    <h3 class="section-title">Featured Work</h3>
+
+    <div class="grid">
+      <!-- Update the data-id to connect to the matching modal -------->
+      <article class="card reveal" data-id="1" style="--bg:url('https://source.unsplash.com/800x600?technology');">
+        <div class="card__overlay">
+          <h4 class="card__title">Smart Grid Forecasting</h4>
+          <p class="tags">LSTM · PyTorch</p>
+        </div>
+      </article>
+
+      <article class="card reveal" data-id="2" style="--bg:url('https://source.unsplash.com/800x600?drone');">
+        <div class="card__overlay">
+          <h4 class="card__title">Autonomous Drone RL</h4>
+          <p class="tags">ROS2 · PPO</p>
+        </div>
+      </article>
+
+      <!-- …duplicate up to 10 cards … -->
+      <article class="card reveal" data-id="3" style="--bg:url('https://source.unsplash.com/800x600?code');">
+        <div class="card__overlay">
+          <h4 class="card__title">OCR-Powered ID Parser</h4>
+          <p class="tags">PaddleOCR · Regex</p>
+        </div>
+      </article>
+
+      <!-- Add more cards here (4–10) -->
+    </div>
+  </main>
+
+  <!-- ◎  Modal backdrop + project info -->
+  <div class="modal-backdrop" hidden>
+    <section class="modal glass" id="modal-1">
+      <button class="modal__close" aria-label="Close">×</button>
+      <h4>Smart Grid Forecasting</h4>
       <p>
-        © <span id="year"></span> [Your Name] ·
-        <a href="https://linkedin.com/in/[your-handle]" target="_blank"
-          >LinkedIn</a
-        >
-        ·
-        <a href="https://github.com/[your-handle]" target="_blank">GitHub</a>
+        LSTM network that predicts 24 h electricity demand (±2 % MAPE).  
+        Ingests real-time SCADA feeds, retrains nightly via GitHub Actions & deploys to AWS Lambda.
       </p>
-    </footer>
+      <a href="https://github.com/yourname/smart-grid" target="_blank" class="btn-primary">View Code ↗</a>
+    </section>
 
-    <!-- =========== SCRIPTS =========== -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <section class="modal glass" id="modal-2">
+      <button class="modal__close">×</button>
+      <h4>Autonomous Drone Flight (PPO)</h4>
+      <p>
+        Policy trained in Microsoft AirSim then flashed to a PX4 quadrotor.  
+        Handles wind disturbances & obstacle avoidance in realtime.
+      </p>
+      <a href="https://github.com/yourname/drone-ppo" target="_blank" class="btn-primary">View Code ↗</a>
+    </section>
+
+    <!-- …modal-3 → modal-10 … -->
+  </div>
+
+  <footer class="footer container">
+    © <span id="year"></span> · <a href="https://github.com/yourname">GitHub</a> · <a href="https://linkedin.com/in/yourname">LinkedIn</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js?v=3"></script>
+</body>
 </html>
