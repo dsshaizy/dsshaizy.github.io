@@ -5,7 +5,7 @@
   });
 })();
 
-/* 2) VanillaTilt for cards */
+/* 2) VanillaTilt for cards (if included) */
 if (window.VanillaTilt) {
   VanillaTilt.init(document.querySelectorAll('.tilt'), {
     max: 10,
@@ -15,16 +15,16 @@ if (window.VanillaTilt) {
   });
 }
 
-/* 3) Smooth-scroll anchors */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
+/* 3) Smooth scroll for anchors */
+document.querySelectorAll('a[href^="#"]').forEach(a =>
   a.addEventListener('click', e => {
-    const target = document.getElementById(a.getAttribute('href').slice(1));
-    if (target) {
+    const tgt = document.getElementById(a.getAttribute('href').slice(1));
+    if (tgt) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      tgt.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
-});
+  })
+);
 
 /* 4) Reveal-on-scroll */
 const observer = new IntersectionObserver(
