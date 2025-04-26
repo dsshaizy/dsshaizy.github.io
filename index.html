@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Hi, I’m [Your Name]</h1>
+    <p>Electrical Engineering graduate turned AI Engineer. Welcome to my portfolio!</p>
+  </header>
+
+  <main>
+    <h2>Projects</h2>
+    <div class="grid">
+      <!-- Repeat this block for each project -->
+      <div class="project-card" data-project="1">
+        <h3>Project One</h3>
+        <p>Short tagline</p>
+      </div>
+
+      <div class="project-card" data-project="2">
+        <h3>Project Two</h3>
+        <p>Short tagline</p>
+      </div>
+      <!-- ... -->
+    </div>
+
+    <!-- Hidden detail panels -->
+    <div id="project-detail-container">
+      <div class="project-detail" id="project-1">
+        <button class="close">×</button>
+        <h3>Project One</h3>
+        <p>Full description of Project One, tech stack, links, screenshots, etc.</p>
+        <a href="https://github.com/yourrepo/project-one" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-detail" id="project-2">
+        <button class="close">×</button>
+        <h3>Project Two</h3>
+        <p>Full description of Project Two, tech stack, links, screenshots, etc.</p>
+        <a href="https://github.com/yourrepo/project-two" target="_blank">View on GitHub</a>
+      </div>
+      <!-- ... -->
+    </div>
+  </main>
+
+  <footer>
+    <p>Connect with me: <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> | <a href="https://github.com/yourusername">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
