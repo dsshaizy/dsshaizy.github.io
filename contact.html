@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact · [Your Name]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Inter font + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-pf8+W3pqYiqcyuRdkEhoTQZevpQRS9+7Wv2NwWF6TPF3vjN+DW6R5F0Y2+w+D9XtAL+3nDpP+g4lCGjZ7lEFkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <div class="bg"></div>
@@ -13,25 +19,59 @@
   <nav class="nav glass container">
     <span class="logo">[Your Name]</span>
     <ul class="nav__links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#projects">Projects</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="contact-wrap container glass">
-    <h1>Let’s connect</h1>
-    <p>I’m always open for freelance, consulting or just a tech-chat ☕.</p>
+  <section class="contact-wrap container">
+    <div class="profile-card glass">
+      <img src="assets/profile.jpg" alt="[Your Name]" class="profile-img"/>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/yourhandle" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/yourname" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="assets/YourName_Resume.pdf" target="_blank" aria-label="Resume">
+          <i class="fas fa-file-lines"></i>
+        </a>
+      </div>
+    </div>
 
-    <ul class="contact-list">
-      <li><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></li>
-      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourhandle" target="_blank">@yourhandle</a></li>
-      <li><strong>Phone:</strong> +1-234-567-8901</li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/yourname" target="_blank">github.com/yourname</a></li>
-    </ul>
+    <div class="contact-form glass">
+      <h2>Let’s Chat</h2>
+      <p>Feel free to drop me a line. I’ll get back to you asap.</p>
+
+      <form action="https://formspree.io/f/FORM_ID" method="POST">
+        <label>
+          Your Email
+          <input type="email" name="reply_to" placeholder="you@example.com" required/>
+        </label>
+        <label>
+          Organization
+          <input type="text" name="organization" placeholder="Company / School"/>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" placeholder="Hi there, ..." required></textarea>
+        </label>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <p class="direct">
+        Or email me directly at  
+        <a href="mailto:youremail@gmail.com">youremail@gmail.com</a>
+      </p>
+    </div>
   </section>
 
-  <footer class="footer container">© <span id="year"></span> [Your Name]</footer>
+  <footer class="footer container">
+    © <span id="year"></span> [Your Name]
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
