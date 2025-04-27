@@ -28,6 +28,7 @@ body {
   background: var(--clr-bg);
   color: #1a1a1a;
   line-height: 1.5;
+  overflow-x: hidden; /* prevent any accidental horizontal scroll */
 }
 
 /* BACKGROUND BLOBS */
@@ -64,16 +65,17 @@ body {
   transform: translateY(-2px);
 }
 
-/* NAVBAR (full‐width BG, centered content) */
+/* NAVBAR */
+/* Now respects the container width for perfect centering */
 .nav.container {
-  width: 100%;
-  max-width: none;
-  margin: 1rem 0;
+  /* no width override—uses .container’s width */
+  margin: 1rem auto;
   padding: 0.8rem 2rem;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
