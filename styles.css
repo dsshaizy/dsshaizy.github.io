@@ -41,7 +41,7 @@ body {
   filter: blur(80px) saturate(120%);
 }
 
-/* CONTAINER (for page content) */
+/* GLOBAL CONTAINER (for page content) */
 .container {
   width: min(1200px, 90%);
   margin: 0 auto;
@@ -64,13 +64,12 @@ body {
   transform: translateY(-2px);
 }
 
-/* NAVBAR — full-width background, centered content */
+/* NAVBAR — full-width BG, centered inner content */
 .nav.container {
-  /* override the .container width so nav spans 100% */
   width: 100%;
   max-width: none;
   margin: 1rem 0;
-  padding: 0.8rem 2rem; /* larger fixed side padding */
+  padding: 0.8rem 2rem;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
@@ -80,8 +79,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
-/* NAV CONTENT */
 .logo {
   font-weight: 700;
   font-size: 1.2rem;
@@ -177,16 +174,22 @@ body {
   opacity: 0.85;
 }
 
-/* CONTACT PAGE */
+/* CONTACT PAGE — override container to full width & center grid */
+.contact-wrap.container {
+  width: 100%;
+  max-width: none;
+  padding: 0;      /* remove extra gutters */
+  margin: 4rem auto;
+}
 .contact-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* two columns: profile-card auto-width, form auto-width */
+  grid-template-columns: minmax(280px, auto) minmax(300px, auto);
+  justify-content: center;  /* center the two columns */
   gap: 2rem;
-  margin: 4rem 0;
-  justify-items: center;
 }
 
-/* PROFILE CARD (shrink-to-fit content) */
+/* PROFILE CARD (shrink-to-fit) */
 .profile-card {
   width: 100%;
   max-width: 320px;
@@ -196,13 +199,9 @@ body {
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
   text-align: center;
-
-  /* prevent stretching and shrink-wrap to content */
-  align-self: start;
-  height: fit-content;
-
-  /* trim bottom padding */
-  padding: 2rem 1rem 0.5rem;
+  align-self: start;    /* don’t stretch to row height */
+  height: fit-content;  /* shrink-wrap content */
+  padding: 2rem 1rem 0.5rem; /* trimmed bottom */
 }
 .profile-img {
   width: 112px;
@@ -228,7 +227,7 @@ body {
   color: var(--clr-accent);
 }
 
-/* CHAT FORM (wider + shorter) */
+/* CHAT FORM (wider & shorter) */
 .contact-form {
   width: 100%;
   max-width: 600px;
@@ -237,9 +236,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
-
-  /* less vertical padding */
-  padding: 1rem 2rem;
+  padding: 1rem 2rem; /* less vertical padding */
 }
 .contact-form h2 {
   margin-top: 0;
