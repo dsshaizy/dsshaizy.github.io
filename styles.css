@@ -191,6 +191,7 @@ body {
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
   text-align: center;
+  align-self: start;
   padding: 2rem 1rem 0.5rem; /* trimmed bottom padding */
 }
 .profile-img {
