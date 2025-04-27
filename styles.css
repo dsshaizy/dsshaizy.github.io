@@ -41,7 +41,7 @@ body {
   filter: blur(80px) saturate(120%);
 }
 
-/* CONTAINER */
+/* CONTAINER (for page content) */
 .container {
   width: min(1200px, 90%);
   margin: 0 auto;
@@ -64,19 +64,24 @@ body {
   transform: translateY(-2px);
 }
 
-/* NAVBAR */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: min(1200px, 90%);
-  margin: 1rem auto;
-  padding: 0.8rem 1.4rem;
+/* NAVBAR — full-width background, centered content */
+.nav.container {
+  /* override the .container width so nav spans 100% */
+  width: 100%;
+  max-width: none;
+  margin: 1rem 0;
+  padding: 0.8rem 2rem; /* larger fixed side padding */
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/* NAV CONTENT */
 .logo {
   font-weight: 700;
   font-size: 1.2rem;
@@ -181,7 +186,7 @@ body {
   justify-items: center;
 }
 
-/* PROFILE CARD */
+/* PROFILE CARD (shrink-to-fit content) */
 .profile-card {
   width: 100%;
   max-width: 320px;
@@ -191,8 +196,13 @@ body {
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
   text-align: center;
+
+  /* prevent stretching and shrink-wrap to content */
   align-self: start;
-  padding: 2rem 1rem 0.5rem; /* trimmed bottom padding */
+  height: fit-content;
+
+  /* trim bottom padding */
+  padding: 2rem 1rem 0.5rem;
 }
 .profile-img {
   width: 112px;
@@ -218,16 +228,18 @@ body {
   color: var(--clr-accent);
 }
 
-/* CONTACT FORM */
+/* CHAT FORM (wider + shorter) */
 .contact-form {
   width: 100%;
-  max-width: 600px; /* wider */
+  max-width: 600px;
   background: var(--glass-bg);
   backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
-  padding: 1rem 2rem; /* reduced vertical padding */
+
+  /* less vertical padding */
+  padding: 1rem 2rem;
 }
 .contact-form h2 {
   margin-top: 0;
@@ -258,7 +270,7 @@ body {
   resize: vertical;
 }
 .contact-form textarea {
-  height: 120px; /* fixed, shorter */
+  height: 120px;
   max-height: 120px;
 }
 .contact-form .btn {
