@@ -5,12 +5,12 @@ styles.css — Complete stylesheet for Home, Projects, Project Pages & Contact
 /* THEME VARIABLES */
 :root {
   --clr-bg: #f9f9ff;
-  --glass-bg: rgba(255,255,255,0.6);
+  --glass-bg: rgba(255, 255, 255, 0.6);
   --clr-accent: #5644ff;
   --clr-accent-dark: #4436e6;
   --radius-lg: 1.25rem;
   --radius-med: 1rem;
-  --shadow: 0 10px 20px -8px rgba(0,0,0,0.12);
+  --shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.12);
   font-family: "Inter", sans-serif;
 }
 
@@ -45,7 +45,7 @@ body {
 .container {
   width: min(1200px, 90%);
   margin: 0 auto;
-  padding: 0 1rem; /* equal gutter left & right */
+  padding: 0 1rem;
 }
 
 /* BUTTONS */
@@ -69,8 +69,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 0;
-  padding: 0.8rem 1.4rem; /* equal left & right */
+  width: min(1200px, 90%);
+  margin: 1rem auto;
+  padding: 0.8rem 1.4rem;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
@@ -190,11 +191,10 @@ body {
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
   text-align: center;
-  /* padding: top 2rem, bottom 1rem so it ends just below icons */
-  padding: 2rem 1rem 1rem;
+  padding: 2rem 1rem 0.5rem; /* trimmed bottom padding */
 }
 .profile-img {
-  width: 112px; /* 80% of 140px */
+  width: 112px;
   height: 112px;
   object-fit: cover;
   border-radius: 50%;
@@ -220,14 +220,13 @@ body {
 /* CONTACT FORM */
 .contact-form {
   width: 100%;
-  max-width: 600px; /* wider form */
+  max-width: 600px; /* wider */
   background: var(--glass-bg);
   backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-med);
   box-shadow: var(--shadow);
-  /* slightly less vertical padding */
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem; /* reduced vertical padding */
 }
 .contact-form h2 {
   margin-top: 0;
@@ -256,6 +255,10 @@ body {
   border-radius: 0.88rem;
   font-size: 0.95rem;
   resize: vertical;
+}
+.contact-form textarea {
+  height: 120px; /* fixed, shorter */
+  max-height: 120px;
 }
 .contact-form .btn {
   width: fit-content;
@@ -317,7 +320,7 @@ body {
   transform: translateY(0);
 }
 
-/* RESPONSIVE TWEAKS */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .contact-wrap {
     grid-template-columns: 1fr;
