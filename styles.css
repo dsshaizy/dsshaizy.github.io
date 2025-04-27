@@ -28,7 +28,7 @@ body {
   background: var(--clr-bg);
   color: #1a1a1a;
   line-height: 1.5;
-  overflow-x: hidden; /* safeguard */
+  overflow-x: hidden;
 }
 
 /* BACKGROUND BLOBS */
@@ -44,9 +44,10 @@ body {
 
 /* GLOBAL CONTAINER */
 .container {
-  width: min(1200px, 90%);
-  margin: 0 auto;
-  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;      /* fixed max width */
+  margin: 0 auto;         /* centers it */
+  padding: 0 1rem;        /* side gutters */
 }
 
 /* BUTTONS */
@@ -73,6 +74,7 @@ body {
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -173,7 +175,7 @@ body {
 }
 
 /* CONTACT SECTION */
-/* Flex layout keeps both cards side by side, centered, at any zoom */
+/* Now simply centered inside the same .container */
 .contact-wrap {
   display: flex;
   justify-content: center;
@@ -184,7 +186,7 @@ body {
 
 /* PROFILE CARD */
 .profile-card {
-  width: 100%;
+  flex: 0 0 auto;
   max-width: 280px;
   background: var(--glass-bg);
   backdrop-filter: blur(12px) saturate(180%);
@@ -222,8 +224,8 @@ body {
 
 /* CHAT FORM */
 .contact-form {
-  width: 100%;
-  max-width: 500px; /* narrower so entire form fits */
+  flex: 0 0 auto;
+  max-width: 500px; /* ensures entire form fits at once */
   background: var(--glass-bg);
   backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
