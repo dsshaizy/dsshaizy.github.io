@@ -5,12 +5,12 @@ styles.css — Complete stylesheet for Home, Projects, Project Pages & Contact
 /* THEME VARIABLES */
 :root {
   --clr-bg: #f9f9ff;
-  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255,255,255,0.6);
   --clr-accent: #5644ff;
   --clr-accent-dark: #4436e6;
   --radius-lg: 1.25rem;
   --radius-med: 1rem;
-  --shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.12);
+  --shadow: 0 10px 20px -8px rgba(0,0,0,0.12);
   font-family: "Inter", sans-serif;
 }
 
@@ -44,10 +44,9 @@ body {
 
 /* GLOBAL CONTAINER */
 .container {
-  width: 100%;
-  max-width: 1200px;      /* fixed max width */
-  margin: 0 auto;         /* centers it */
-  padding: 0 1rem;        /* side gutters */
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* BUTTONS */
@@ -74,7 +73,6 @@ body {
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -175,19 +173,20 @@ body {
 }
 
 /* CONTACT SECTION */
-/* Now simply centered inside the same .container */
+/* Now centered in viewport via margin auto + fixed max-width */
 .contact-wrap {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  margin: 4rem 0;
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 800px; /* sum of 280px + 500px + gap ≈800px */
 }
 
 /* PROFILE CARD */
 .profile-card {
-  flex: 0 0 auto;
-  max-width: 280px;
+  flex: 0 0 280px; /* fixed width */
   background: var(--glass-bg);
   backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -224,8 +223,7 @@ body {
 
 /* CHAT FORM */
 .contact-form {
-  flex: 0 0 auto;
-  max-width: 500px; /* ensures entire form fits at once */
+  flex: 0 0 500px;  /* fixed width */
   background: var(--glass-bg);
   backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -331,6 +329,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: none; /* allow full width on small screens */
   }
   .contact-form {
     text-align: left;
